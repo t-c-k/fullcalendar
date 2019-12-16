@@ -75,7 +75,7 @@ export interface DropInfo {
 // `keyof OptionsInputBaseEventHandlers`
 export type EventHandlerName =
   '_init' | 'selectAllow' | 'eventAllow' | 'eventDataTransform' | 'datesRender' |
-  'datesDestroy' | 'dayRender' | 'windowResize' | 'dateClick' | 'eventClick' |
+  'datesDestroy' | 'dayRender' | 'windowResize' | 'dateClick' | 'dateRightClick' | 'eventClick' |
   'eventMouseEnter' | 'eventMouseLeave' | 'select' | 'unselect' | 'loading' |
   'eventRender' | 'eventPositioned' | '_eventsPositioned' | 'eventDestroy' |
   'eventDragStart' | 'eventDragStop' | 'eventDrop' | '_destroyed' | 'drop' |
@@ -210,6 +210,7 @@ export interface OptionsInputBase {
   dayRender?(arg: { view: View, date: Date, allDay?: boolean, el: HTMLElement }): void
   windowResize?(view: View): void
   dateClick?(arg: { date: Date, dateStr: string, allDay: boolean, resource?: any, dayEl: HTMLElement, jsEvent: MouseEvent, view: View }): void // resource for Scheduler
+  dateRightClick?(arg: { date: Date, dateStr: string, allDay: boolean, resource?: any, dayEl: HTMLElement, jsEvent: MouseEvent, view: View }): void // resource for Scheduler
   eventClick?(arg: { el: HTMLElement, event: EventApi, jsEvent: MouseEvent, view: View }): boolean | void
   eventMouseEnter?(arg: { el: HTMLElement, event: EventApi, jsEvent: MouseEvent, view: View }): void
   eventMouseLeave?(arg: { el: HTMLElement, event: EventApi, jsEvent: MouseEvent, view: View }): void

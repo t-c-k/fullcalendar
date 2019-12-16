@@ -1,5 +1,6 @@
 import { createPlugin } from '@fullcalendar/core'
 import DateClicking from './interactions/DateClicking'
+import DateRightClicking from './interactions/DateRightClicking'
 import DateSelecting from './interactions/DateSelecting'
 import EventDragging from './interactions/EventDragging'
 import EventResizing from './interactions/EventResizing'
@@ -7,7 +8,7 @@ import UnselectAuto from './interactions/UnselectAuto'
 import FeaturefulElementDragging from './dnd/FeaturefulElementDragging'
 
 export default createPlugin({
-  componentInteractions: [ DateClicking, DateSelecting, EventDragging, EventResizing ],
+  componentInteractions: [ DateClicking, DateRightClicking, DateSelecting, EventDragging, EventResizing ],
   calendarInteractions: [ UnselectAuto ],
   elementDraggingImpl: FeaturefulElementDragging
 })

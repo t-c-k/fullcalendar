@@ -1036,6 +1036,18 @@ export default class Calendar {
   }
 
 
+  triggerDateRightClick(dateSpan: DateSpan, dayEl: HTMLElement, view: View, ev: UIEvent) {
+    const arg = {
+      ...this.buildDatePointApi(dateSpan),
+      dayEl,
+      jsEvent: ev as MouseEvent
+      view
+    }
+
+    this.publiclyTrigger('dateRightClick', [ arg ])
+  }
+
+
   buildDatePointApi(dateSpan: DateSpan) {
     let props = {} as DatePointApi
 
